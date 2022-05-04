@@ -8,9 +8,7 @@
     "start": "next start",
     "lint": "eslint src",
     "test": "jest"
-   
   },
-  
   "lint-staged": {
     "src/**/*": [
       "yarn lint --fix",
@@ -49,7 +47,6 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react-hooks": "^4.4.0",
-    "husky": "^7.0.0",
     "jest": "^28.0.3",
     "prettier": "2.6.2",
     "ts-jest": "^27.1.4",
