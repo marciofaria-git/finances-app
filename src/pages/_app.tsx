@@ -46,7 +46,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   })
 
   analytics.page()
-  console.log(googleTagManager)
 
   return (
     <ThemeProvider theme={theme}>
