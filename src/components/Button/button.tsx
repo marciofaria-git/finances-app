@@ -2,11 +2,12 @@ import React from 'react'
 import { DefaultButton } from './buttonStyle'
 import { ButtonProps } from './interface/ButtonProps'
 
-function Button({ value }: ButtonProps) {
+function Button({ ...props }: ButtonProps) {
   return (
     <>
-      <DefaultButton>{value}</DefaultButton>
+      <DefaultButton {...props}></DefaultButton>
     </>
   )
 }
+
 export { Button }

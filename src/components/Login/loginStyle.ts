@@ -33,3 +33,8 @@ export const ContentInput = styled.div`
   width: 300px;
   gap: 2rem;
 `
+export const Icone = styled.div`
+  display: flex;
+  position: relative;
+  right: 40px;
+`

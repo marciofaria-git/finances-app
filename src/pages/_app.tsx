@@ -1,24 +1,26 @@
 import type { AppProps } from 'next/app'
 import { useEffect, useState } from 'react'
 import { DefaultTheme, ThemeProvider } from 'styled-components'
+import { AuthContextProvider } from '../contexts/authContext'
 import GlobalStyles from '../styles/global'
 import { combineTheme, dark, light } from '../styles/themes'
-import Switch from 'react-switch'
+import Analytics from 'analytics'
+
+import googleTagManager from '@analytics/google-tag-manager'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [theme, setTheme] = useState<DefaultTheme>(combineTheme(light))
 
-  const toggleTheme = () => {
-    if (theme.title === 'light') {
-      setTheme(combineTheme(dark))
-      localStorage.setItem('theme', 'dark')
-    }
-    if (theme.title === 'dark') {
-      setTheme(combineTheme(light))
-      localStorage.setItem('theme', 'light')
-    }
-  }
-
+  // const toggleTheme = () => {
+  //   if (theme.title === 'light') {
+  //     setTheme(combineTheme(dark))
+  //     localStorage.setItem('theme', 'dark')
+  //   }
+  //   if (theme.title === 'dark') {
+  //     setTheme(combineTheme(light))
+  //     localStorage.setItem('theme', 'light')
+  //   }
+  // }
   useEffect(() => {
     function checkTheme() {
       const typeTheme = localStorage.getItem('theme')
@@ -30,15 +32,28 @@ function MyApp({ Component, pageProps }: AppProps) {
       }
     }
 
-    console.log(localStorage.getItem('theme'))
     checkTheme()
   }, [])
+
+  const analytics = Analytics({
+    app: 'awesome-app',
+
+    plugins: [
+      googleTagManager({
+        containerId: 'GTM-TF3VFZ3'
+      })
+    ]
+  })
+
+  analytics.page()
+  console.log(googleTagManager)
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Switch checked={theme.title === 'dark'} onChange={toggleTheme} />
-      <Component {...pageProps} />
+      <AuthContextProvider>
+        <Component {...pageProps} />
+      </AuthContextProvider>
     </ThemeProvider>
   )
 }

@@ -3,11 +3,16 @@ import 'styled-components'
 declare module 'styled-components' {
   export interface DefaultTheme {
     title: string
+    buttons: {
+      primary: string
+    }
+    inputs: {
+      primary: string
+    }
+
     colors: {
       primary: string
       secundary: string
-      button: string
-      input: string
       background: string
       text: string
     }
@@ -20,11 +25,16 @@ declare module 'styled-components' {
 
   export interface CustomTheme {
     title: string
+    buttons: {
+      primary: string
+    }
+
+    inputs: {
+      primary: string
+    }
     colors: {
       primary: string
       secundary: string
-      button: string
-      input: string
       background: string
       text: string
     }

@@ -1,3 +1,1 @@
-export interface ButtonProps {
-  value: string
-}
+export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>

@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import React from 'react'
+
 import HomePage from '../components/Home/home'
 
 const Home: NextPage = () => {
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
           rel="stylesheet"
         />
       </Head>
+
       <HomePage />
     </>
   )
