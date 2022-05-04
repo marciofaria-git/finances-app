@@ -36,7 +36,7 @@ function Login() {
         </SubTitle>
 
         <ContentInput>
-          <Input label="Username" />
+          <Input label="username" />
 
           <Input type="password" label="Password" />
         </ContentInput>

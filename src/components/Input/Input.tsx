@@ -2,12 +2,12 @@ import React from 'react'
 import { InputDefault, Label } from './inputStyle'
 import { InputProps } from './Interface/InputProps'
 
-function Input({ label, ...props }: InputProps) {
+function Input({ label, ...rest }: InputProps) {
   return (
     <>
       <Label>
         {label}
-        <InputDefault {...props}></InputDefault>
+        <InputDefault {...rest}></InputDefault>
       </Label>
     </>
   )
