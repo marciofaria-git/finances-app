@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     plugins: [
       googleTagManager({
-        containerId: 'GTM-57Z7P3F'
+        containerId: 'GTM-TF3VFZ3'
       })
     ]
   })
