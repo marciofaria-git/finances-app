@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Container, Logo } from './mainStyle'
-import logo from '../../../public/assets/FinancesLogo.svg'
+import logo from '../../../../public/assets/FinancesLogo.svg'
 import Login from '../../Login/login'
 
 function MainHome() {
